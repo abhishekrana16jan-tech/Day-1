@@ -80,5 +80,24 @@ Analyze several brace configurations
 Select the optimum layout
 Produce
 /tmp/output/retrofit_design.json
+problems/
+└── steel_frame_x_bracing/
+    ├── instruction.md
+    ├── metadata.json
+    ├── task.toml
+    ├── data/
+    │   ├── building_geometry.json
+    │   ├── story_properties.json
+    │   ├── steel_sections.json
+    │   ├── design_limits.json
+    │   └── output_schema.json
+    ├── scorer/
+    │   ├── compute_score.py
+    │   └── data/
+    │       └── hidden_cases.json
+    ├── solution/
+    │   └── solve.sh
+    └── environment/
+        └── Dockerfile
 
 which achieves a 1.0 reward under the hidden evaluation.
