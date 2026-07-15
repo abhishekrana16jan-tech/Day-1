@@ -1,0 +1,84 @@
+Project Name
+
+Multi-Story Steel Frame Seismic Retrofit Using X-Bracing Optimization
+
+Domain
+Task Type: Structures
+Domain: seismic_retrofit
+Problem Statement
+
+A four-story steel moment-resisting frame has inadequate lateral stiffness under seismic loading.
+
+The model must determine the optimal placement of steel X-braces to improve seismic performance while minimizing additional steel weight.
+
+The model should produce a JSON file containing:
+
+Floors selected for retrofit
+Bay locations
+Brace section sizes
+Estimated total steel weight
+Expected maximum interstory drift ratio
+Public Files (data/)
+building_geometry.json
+story_properties.json
+load_combinations.json
+steel_sections.json
+design_limits.json
+output_schema.json
+These files include:
+
+Frame geometry
+Story heights
+Bay spacing
+Dead and live loads
+Material properties
+Available steel sections
+Drift limits
+Weight calculation formulas
+Required Output
+/tmp/output/retrofit_design.json
+{
+  "retrofit_bays":[
+      {
+        "story":1,
+        "bay":2,
+        "section":"HSS203x203x10"
+      },
+      {
+        "story":2,
+        "bay":2,
+        "section":"HSS203x203x10"
+      }
+  ],
+  "estimated_weight":4720,
+  "maximum_drift":0.018
+}
+Hidden Grader
+
+The grader will evaluate:
+
+Drift reduction
+Structural stability
+Brace symmetry
+Steel weight
+Member capacity
+Output schema validity
+Score components:
+
+Criterion	Weight
+Drift compliance	40%
+Steel weight optimization	25%
+Brace layout efficiency	15%
+Capacity checks	10%
+JSON validation	10%
+Oracle Solution
+
+The oracle should:
+
+Read public geometry
+Analyze several brace configurations
+Select the optimum layout
+Produce
+/tmp/output/retrofit_design.json
+
+which achieves a 1.0 reward under the hidden evaluation.
